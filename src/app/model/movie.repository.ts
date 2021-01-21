@@ -6,15 +6,19 @@ import { RestService } from './rest.service';
 export class MovieRepository implements OnInit {
   private movies: Movie[] = [];
 
-  constructor(private restService: RestService) {}
-
-  ngOnInit(): void {
+  constructor(private restService: RestService) {
     this.restService.getMovies().subscribe((response) => {
       this.movies = response;
     });
   }
 
-  getProduct(id: number): Movie {
+  ngOnInit(): void {}
+
+  getMovie(id: number): Movie {
     return this.movies.find((p) => p.id == id);
+  }
+
+  getMovies(): Movie[] {
+    return this.movies;
   }
 }

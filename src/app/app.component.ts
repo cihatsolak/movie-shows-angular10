@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'root',
-  template:
-    '<div class="bg-primary m-5 p-5">Movies & Tv Shows Application</div>',
+  template: '<shop></shop>',
 })
 export class AppComponent {}
