@@ -1,1 +1,56 @@
 <navbar></navbar>
+<div class="container pt-100 mb-5">
+  <div class="row">
+    <div class="col-3">
+      <div class="list-group">
+        <a
+          href="#"
+          (click)="changeCategory()"
+          class="list-group-item list-group-item-action"
+          >All Categories</a
+        >
+        <a
+          *ngFor="let category of categories"
+          (click)="changeCategory(category)"
+          href="#"
+          class="list-group-item list-group-item-action"
+          [class.active]="category == selectedCategory"
+          >{{ category.name }}
+        </a>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="row">
+        <ng-container *ngFor="let movie of movies">
+          <div class="col-md-4">
+            <div class="card mb-3">
+              <img
+                src="/assets/img/{{ movie.imageUrl }}"
+                style="max-height: 350px"
+                alt="{{ movie.name }}"
+              />
+              <div class="card-body">
+                <h4 class="cart-title">
+                  <a href="">{{ movie.name }}</a>
+                </h4>
+                <small class="text-muted float-left">
+                  <i class="fas fa-lira-sign fa-sm"></i> {{ movie.price }}
+                </small>
+                <i
+                  *ngFor="let star of getStars(movie.star)"
+                  class="fas fa-star float-right"
+                ></i>
+              </div>
+              <div class="card-footer text-center">
+                <button class="btn btn-outline-primary btn-sm">Details</button>
+                <button class="btn btn-outline-primary btn-sm ml-3">
+                  Add to card
+                </button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
