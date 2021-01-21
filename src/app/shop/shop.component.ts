@@ -24,7 +24,7 @@ export class ShopComponent {
   ) {}
 
   get movies(): Movie[] {
-    return this.movieRepository.getMovies();
+    return this.movieRepository.getMovies(this.selectedCategory?.id);
   }
 
   get categories(): Category[] {

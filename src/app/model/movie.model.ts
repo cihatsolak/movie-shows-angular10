@@ -6,6 +6,7 @@ export class Movie {
     public imageUrl?: string,
     public description?: string,
     public imdb?: number,
-    public star?: number
+    public star?: number,
+    public categoryId?: number
   ) {}
 }

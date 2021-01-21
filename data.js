@@ -10,6 +10,7 @@ module.exports = function () {
           "If the world were ending and I could only save ONE movie, I would pick Titanic. Yep, it's that good. Leonardo DiCaprio and Kate Winslet star in the most beautiful love story of our time – which takes place during one of the most devastating disasters of our time. ",
         imdb: 8.9,
         star: 5,
+        categoryId: 1,
       },
       {
         id: 2,
@@ -20,6 +21,7 @@ module.exports = function () {
           "When all four members of a family find themselves out of work and unable to pay rent, they come up with a scheme: lie and cheat to get jobs from the same rich family. With a brutal twist ending, this 2019 Academy Award for Best Picture winner is a must-watch for everyone.",
         imdb: 5.2,
         star: 3,
+        categoryId: 2,
       },
       {
         id: 3,
@@ -30,6 +32,7 @@ module.exports = function () {
           "Haley Joel Osment plays Cole, a young boy who struggles with his supernatural abilities. When he meets Malcolm, a child psychologist, Cole learns to better communicate with the dead who seek him out. It ends in a shocking twist you never could have predicted. ",
         imdb: 6.4,
         star: 4,
+        categoryId: 3,
       },
       {
         id: 4,
@@ -40,6 +43,7 @@ module.exports = function () {
           "Charlie finally finds where he belongs, when he falls in with a group of theater kids at his high school. But can he overcome his traumatic past to find true acceptance?",
         imdb: 9.4,
         star: 5,
+        categoryId: 1,
       },
       {
         id: 5,
@@ -50,6 +54,7 @@ module.exports = function () {
           "Based on a true story, this powerful film shows Oscar Grant's life before he was killed by police officers. Michael B. Jordan brings Grant's persona to the the big screen.",
         imdb: 3.5,
         star: 2,
+        categoryId: 2,
       },
       {
         id: 6,
@@ -60,6 +65,7 @@ module.exports = function () {
           "This movie will never not be cute. When Hallie and Annie meet at summer camp and realize they're actually twins, they decide to trade places in an attempt to get their parents back together. Did I mention both girls are played by Lindsay Lohan? Bonus! ",
         imdb: 7.3,
         star: 4,
+        categoryId: 3,
       },
       {
         id: 7,
@@ -70,6 +76,7 @@ module.exports = function () {
           "A family suddenly finds themselves trying to prove their innocence, after their father is murdered and a detective comes in to solve the case.",
         imdb: 4.3,
         star: 5,
+        categoryId: 1,
       },
     ],
     categories: [

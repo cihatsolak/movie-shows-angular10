@@ -18,7 +18,11 @@ export class MovieRepository implements OnInit {
     return this.movies.find((p) => p.id == id);
   }
 
-  getMovies(): Movie[] {
-    return this.movies;
+  getMovies(categoryId: number = null): Movie[] {
+    if (categoryId == null) {
+      return this.movies;
+    }
+
+    return this.movies.filter((item) => item.categoryId == categoryId);
   }
 }
