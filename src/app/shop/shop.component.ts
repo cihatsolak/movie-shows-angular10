@@ -17,6 +17,8 @@ import { MovieRepository } from '../model/movie.repository';
 })
 export class ShopComponent {
   public selectedCategory: Category = null;
+  public moviesPerPageCount: number = 3; //pageCount
+  public selectedPageIndex: number = 1; //pageIndex
 
   constructor(
     private movieRepository: MovieRepository,
@@ -24,7 +26,11 @@ export class ShopComponent {
   ) {}
 
   get movies(): Movie[] {
-    return this.movieRepository.getMovies(this.selectedCategory?.id);
+    let index = (this.selectedPageIndex - 1) * this.moviesPerPageCount;
+    let count = index + this.moviesPerPageCount;
+    return this.movieRepository
+      .getMovies(this.selectedCategory?.id)
+      .slice(index, count);
   }
 
   get categories(): Category[] {
@@ -37,5 +43,20 @@ export class ShopComponent {
 
   getStars(i: number) {
     return new Array(i);
+  }
+
+  changePage(index: number) {
+    this.selectedPageIndex = index;
+  }
+
+  get pageNumbers(): number[] {
+    let count = Math.ceil(
+      this.movieRepository.getMovies(this.selectedCategory?.id).length /
+        this.moviesPerPageCount
+    );
+
+    return Array(count)
+      .fill(0)
+      .map((item, index) => index + 1);
   }
 }

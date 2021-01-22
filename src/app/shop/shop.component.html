@@ -56,6 +56,20 @@
           </div>
         </ng-container>
       </div>
+      <div class="row mt-3" *ngIf="movies.length">
+        <div class="col">
+          <div class="btn-group">
+            <button
+              *ngFor="let pageNumber of pageNumbers"
+              (click)="changePage(pageNumber)"
+              class="button btn btn-outline-primary"
+              [class.active]="pageNumber === selectedPageIndex"
+            >
+              {{ pageNumber }}
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
