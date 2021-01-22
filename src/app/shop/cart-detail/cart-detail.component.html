@@ -28,13 +28,25 @@
               <td>
                 {{ item.movie.price }} <i class="fas fa-lira-sign fa-sm"></i>
               </td>
-              <td>{{ item.quantity }}</td>
+              <td>
+                <input
+                  style="width: 50px"
+                  class="form-control"
+                  [value]="item.quantity"
+                  (change)="
+                    cart.updateQuantity(item.movie, $event.target.value)
+                  "
+                />
+              </td>
               <td>
                 {{ item.quantity * item.movie.price }}
                 <i class="fas fa-lira-sign fa-sm"></i>
               </td>
               <td>
-                <button class="btn btn-danger btn-sm">
+                <button
+                  class="btn btn-danger btn-sm"
+                  (click)="cart.removeItem(item.movie.id)"
+                >
                   <i class="fa fa-times fa-fa-fw"></i>
                 </button>
               </td>

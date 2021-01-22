@@ -4,20 +4,20 @@
     <div class="col-3">
       <cart-summary></cart-summary>
       <div class="list-group">
-        <a
-          href="#"
+        <button
           (click)="changeCategory()"
           class="list-group-item list-group-item-action"
-          >All Categories</a
         >
-        <a
+          All Categories
+        </button>
+        <button
           *ngFor="let category of categories"
           (click)="changeCategory(category)"
-          href="#"
           class="list-group-item list-group-item-action"
           [class.active]="category == selectedCategory"
-          >{{ category.name }}
-        </a>
+        >
+          {{ category.name }}
+        </button>
       </div>
     </div>
     <div class="col-9">
