@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cart } from '../model/cart.model';
 import { Category } from '../model/category.model';
 import { CategoryRepository } from '../model/category.repository';
 import { Movie } from '../model/movie.model';
@@ -22,7 +23,8 @@ export class ShopComponent {
 
   constructor(
     private movieRepository: MovieRepository,
-    private categoryRepository: CategoryRepository
+    private categoryRepository: CategoryRepository,
+    private cart: Cart
   ) {}
 
   get movies(): Movie[] {
@@ -58,5 +60,9 @@ export class ShopComponent {
     return Array(count)
       .fill(0)
       .map((item, index) => index + 1);
+  }
+
+  addMovieToCart(movie: Movie) {
+    this.cart.addItem(movie);
   }
 }
