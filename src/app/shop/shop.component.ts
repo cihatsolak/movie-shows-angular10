@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cart } from '../model/cart.model';
 import { Category } from '../model/category.model';
 import { CategoryRepository } from '../model/category.repository';
@@ -8,13 +9,6 @@ import { MovieRepository } from '../model/movie.repository';
 @Component({
   selector: 'shop',
   templateUrl: 'shop.component.html',
-  styles: [
-    `
-      .pt-100 {
-        padding-top: 100px;
-      }
-    `,
-  ],
 })
 export class ShopComponent {
   public selectedCategory: Category = null;
@@ -24,7 +18,8 @@ export class ShopComponent {
   constructor(
     private movieRepository: MovieRepository,
     private categoryRepository: CategoryRepository,
-    private cart: Cart
+    private cart: Cart,
+    private router: Router
   ) {}
 
   get movies(): Movie[] {
@@ -64,5 +59,6 @@ export class ShopComponent {
 
   addMovieToCart(movie: Movie) {
     this.cart.addItem(movie);
+    this.router.navigateByUrl('/cart');
   }
 }

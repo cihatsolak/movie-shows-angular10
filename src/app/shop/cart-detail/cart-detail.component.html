@@ -1,1 +1,80 @@
-<div class="alert alert-success">Cart detail component</div>
+<navbar></navbar>
+<div class="container pt-100 mb-5">
+  <h1 class="mb-2">Your shopping cart</h1>
+  <div class="row">
+    <div class="col-8">
+      <ng-container *ngIf="cart.itemCount > 0">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Movie</th>
+              <th>Price</th>
+              <th>Quantitity</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cart.items">
+              <td>
+                <img
+                  src="assets/img/{{ item.movie.imageUrl }}"
+                  alt="{{ item.movie.title }}"
+                  width="60"
+                />
+              </td>
+              <td>{{ item.movie.title }}</td>
+              <td>
+                {{ item.movie.price }} <i class="fas fa-lira-sign fa-sm"></i>
+              </td>
+              <td>{{ item.quantity }}</td>
+              <td>
+                {{ item.quantity * item.movie.price }}
+                <i class="fas fa-lira-sign fa-sm"></i>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  <i class="fa fa-times fa-fa-fw"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ng-container>
+
+      <ng-container *ngIf="cart.itemCount == 0">
+        <div class="alert alert-danger mt-3">
+          There are no items in your cart.
+          <br />
+          <button routerLink="/shop" class="btn btn-link p-0">
+            Click to continue shopping.
+          </button>
+        </div>
+      </ng-container>
+    </div>
+    <div class="col-4">
+      <ng-container *ngIf="cart.itemCount > 0">
+        <div class="text-left">
+          <h4>Shopping Summary</h4>
+        </div>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>Total</th>
+              <td>{{ cart.total }} <i class="fas fa-lira-sign fa-sm"></i></td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <button routerLink="/shop" class="btn btn-primary btn-sm">
+            Continue Shopping
+          </button>
+          <button routerLink="/checkout" class="btn btn-primary btn-sm ml-2">
+            Complete Shopping
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
