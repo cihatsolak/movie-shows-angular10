@@ -10,6 +10,7 @@ import { Movie } from 'src/app/model/movie.model';
 })
 export class MovieListComponent implements OnInit {
   @Input() movies: Movie[] = [];
+  selectedMovie: Movie = null;
   constructor(private cart: Cart, private router: Router) {}
 
   ngOnInit(): void {}
@@ -21,5 +22,12 @@ export class MovieListComponent implements OnInit {
 
   getStars(i: number) {
     return new Array(i);
+  }
+
+  displayDetails(movie: Movie) {
+    this.selectedMovie = movie;
+  }
+  hideDetails(): void {
+    this.selectedMovie = null;
   }
 }
