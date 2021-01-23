@@ -12,34 +12,21 @@ import { MovieRepository } from '../model/movie.repository';
 })
 export class ShopComponent {
   public selectedCategory: Category = null;
-  public moviesPerPageCount: number = 3; //pageCount
+  public moviesPerPageCount: number = 6; //pageCount
   public selectedPageIndex: number = 1; //pageIndex
+  public selectedMovies: Movie[] = [];
 
-  constructor(
-    private movieRepository: MovieRepository,
-    private categoryRepository: CategoryRepository,
-    private cart: Cart,
-    private router: Router
-  ) {}
+  constructor(private movieRepository: MovieRepository) {}
 
   get movies(): Movie[] {
     let index = (this.selectedPageIndex - 1) * this.moviesPerPageCount;
     let count = index + this.moviesPerPageCount;
-    return this.movieRepository
-      .getMovies(this.selectedCategory?.id)
-      .slice(index, count);
-  }
 
-  get categories(): Category[] {
-    return this.categoryRepository.getCategories();
-  }
+    this.selectedMovies = this.movieRepository.getMovies(
+      this.selectedCategory?.id
+    );
 
-  changeCategory(category?: Category) {
-    this.selectedCategory = category;
-  }
-
-  getStars(i: number) {
-    return new Array(i);
+    return this.selectedMovies.slice(index, count);
   }
 
   changePage(index: number) {
@@ -57,8 +44,11 @@ export class ShopComponent {
       .map((item, index) => index + 1);
   }
 
-  addMovieToCart(movie: Movie) {
-    this.cart.addItem(movie);
-    this.router.navigateByUrl('/cart');
+  changePageSize(size: number) {
+    this.moviesPerPageCount = size;
+  }
+
+  getCategory(category: Category): void {
+    this.selectedCategory = category;
   }
 }

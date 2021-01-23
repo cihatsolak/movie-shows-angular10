@@ -8,6 +8,8 @@ import { CartSummaryComponent } from './cart-summary/cart-summary.component';
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RouterModule } from '@angular/router';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 @NgModule({
   imports: [ModelModule, BrowserModule, FormsModule, RouterModule],
@@ -17,6 +19,8 @@ import { RouterModule } from '@angular/router';
     CartSummaryComponent,
     CartDetailComponent,
     CheckoutComponent,
+    CategoryListComponent,
+    MovieListComponent,
   ],
   exports: [ShopComponent, CartDetailComponent, CheckoutComponent],
 })

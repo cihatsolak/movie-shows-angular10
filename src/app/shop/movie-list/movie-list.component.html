@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-4" *ngFor="let movie of movies">
+    <div class="card mb-3">
+      <img
+        src="/assets/img/{{ movie.imageUrl }}"
+        style="max-height: 350px"
+        alt="{{ movie.name }}"
+      />
+      <div class="card-body">
+        <h4 class="cart-title">
+          <a href="">{{ movie.name }}</a>
+        </h4>
+        <small class="text-muted float-left">
+          <i class="fas fa-lira-sign fa-sm"></i> {{ movie.price }}
+        </small>
+        <i
+          *ngFor="let star of getStars(movie.star)"
+          class="fas fa-star float-right"
+        ></i>
+      </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-outline-primary btn-sm">Details</button>
+        <button
+          (click)="addMovieToCart(movie)"
+          class="btn btn-outline-primary btn-sm ml-3"
+        >
+          Add to card
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
