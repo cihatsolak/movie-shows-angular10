@@ -1,1 +1,95 @@
-<div class="alert alert-success">Checkout component</div>
+<navbar></navbar>
+<div class="container pt-100 mb-5">
+  <div *ngIf="orderSent" class="m-2 text-center">
+    <h2>We thank you!</h2>
+    <p>Your order has been saved.</p>
+    <button class="btn btn-primary" routerLink="/shop">
+      Continue shopping
+    </button>
+  </div>
+
+  <form
+    action=""
+    *ngIf="!orderSent"
+    #form="ngForm"
+    (ngSubmit)="submitOrder(form)"
+    class="m-4"
+  >
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        #name="ngModel"
+        [(ngModel)]="order.name"
+        required
+      />
+      <span *ngIf="submitted && name.invalid" class="text-danger">
+        Please enter your name.</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input
+        type="text"
+        name="address"
+        class="form-control"
+        #address="ngModel"
+        [(ngModel)]="order.address"
+        required
+      />
+      <span *ngIf="submitted && address.invalid" class="text-danger">
+        Please enter your address.</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input
+        type="text"
+        name="city"
+        class="form-control"
+        #city="ngModel"
+        [(ngModel)]="order.city"
+        required
+      />
+      <span *ngIf="submitted && city.invalid" class="text-danger">
+        Please enter your city.</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input
+        type="tel"
+        name="phone"
+        class="form-control"
+        #phone="ngModel"
+        [(ngModel)]="order.phone"
+        required
+      />
+      <span *ngIf="submitted && phone.invalid" class="text-danger">
+        Please enter your phone.</span
+      >
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        #email="ngModel"
+        [(ngModel)]="order.email"
+        required
+      />
+      <span *ngIf="submitted && email.invalid" class="text-danger">
+        Please enter your email.</span
+      >
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Complete Order</button>
+      <button type="submit" routerLink="/shop" class="btn btn-primary ml-2">
+        Continue Shopping
+      </button>
+    </div>
+  </form>
+</div>
