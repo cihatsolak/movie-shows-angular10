@@ -31,3 +31,8 @@ I wanted to develop a simple project to get to know the angular framework. I use
 | ng g c users/user ya da ng g c component/altcomponent  | Component içerisinde  component eklemek  |
 | ng generate module admin --routing  | admin ile beraber routing modulü eklensin  |
 | npm run json | Json server çalıştırma  |
+
+
+#### Contact Addresses
+##### Linkedin: [Send a message on Linkedin](https://www.linkedin.com/in/cihatsolak/)
+##### Twitter: [Go to @cihattsolak](https://twitter.com/cihattsolak)
