@@ -8,7 +8,7 @@ I wanted to develop a simple project to get to know the angular framework. I use
 
 ## Versions I used during development;
 
-Node: v14.15.3
-Angular: 11.0.9
-AngularCLI: 11.0.7
-Npm: 6.14.9
+ * Node: v14.15.3
+ * Angular: 11.0.9
+ * AngularCLI: 11.0.7
+ * Npm: 6.14.9
