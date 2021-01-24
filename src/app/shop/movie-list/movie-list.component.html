@@ -22,27 +22,28 @@
       class="btn btn-outline-primary btn-sm ml-3"
     >
       Add to card
+      <i class="fas fa-cart-plus fa-sm"></i>
     </button>
   </div>
 </div>
 <div class="row">
   <div class="col-md-4" *ngFor="let movie of movies">
     <div class="card mb-3">
+      <div class="card-header text-center">
+        {{ movie.title }}
+      </div>
       <img
         src="/assets/img/{{ movie.imageUrl }}"
         style="max-height: 350px"
         alt="{{ movie.name }}"
       />
       <div class="card-body">
-        <h4 class="cart-title">
-          <a href="">{{ movie.name }}</a>
-        </h4>
         <small class="text-muted float-left">
           <i class="fas fa-dollar-sign fa-sm"></i> {{ movie.price }}
         </small>
         <i
           *ngFor="let star of getStars(movie.star)"
-          class="fas fa-star float-right"
+          class="fas fa-star float-right text-danger"
         ></i>
       </div>
       <div class="card-footer text-center">
@@ -51,12 +52,14 @@
           class="btn btn-outline-primary btn-sm"
         >
           Details
+          <i class="fas fa-info-circle fa-sm"></i>
         </button>
         <button
           (click)="addMovieToCart(movie)"
-          class="btn btn-outline-primary btn-sm ml-3"
+          class="btn btn-outline-success btn-sm ml-3"
         >
           Add to card
+          <i class="fas fa-cart-plus fa-sm"></i>
         </button>
       </div>
     </div>

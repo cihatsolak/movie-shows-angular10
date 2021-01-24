@@ -30,7 +30,12 @@ export class ShopComponent {
   }
 
   changePage(index: number) {
+    console.log(`gelen değer : ${index}`);
     this.selectedPageIndex = index;
+  }
+
+  changePaginationButton(value: number): void {
+    this.selectedPageIndex += value;
   }
 
   get pageNumbers(): number[] {
