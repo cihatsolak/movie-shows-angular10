@@ -1,1 +1,37 @@
-<p>movie-list works!</p>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of getMovies()">
+      <td>
+        <img
+          src="/assets/img/{{ movie.imageUrl }}"
+          alt="{{ movie.name }}"
+          width="50"
+        />
+      </td>
+      <td>{{ movie.name }}</td>
+      <td>{{ movie.price }} <i class="fas fa-dollar-sign fa-sm"></i></td>
+      <td>
+        <button
+          class="btn btn-warning btn-sm"
+          [routerLink]="['/admin/main/movies/edit', movie.id]"
+        >
+          Edit
+        </button>
+        <button
+          class="btn btn-danger btn-sm ml-2"
+          (click)="deleteProduct(movie)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
