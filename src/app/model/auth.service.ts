@@ -11,7 +11,10 @@ export class AuthService {
   }
 
   get authenticated(): boolean {
-    return this.restService.token != null;
+    if (this.restService.token.length == 0) {
+      return false;
+    }
+    return true;
   }
 
   clear(): void {
