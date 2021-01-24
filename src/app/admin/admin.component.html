@@ -7,10 +7,33 @@
       <button routerLink="/shop" class="btn btn-outline-info btn-block">
         Return Home
       </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/admin/main/movies"
+        class="btn btn-outline-info btn-block"
+      >
+        Movies
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/admin/main/categories"
+        class="btn btn-outline-info btn-block"
+      >
+        Categories
+      </button>
+      <button
+        routerLinkActive="active"
+        routerLink="/admin/main/orders"
+        class="btn btn-outline-info btn-block"
+      >
+        Orders
+      </button>
       <button (click)="logout()" class="btn btn-outline-danger btn-block">
         Logout
       </button>
     </div>
-    <div class="col-9"></div>
+    <div class="col-9">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
