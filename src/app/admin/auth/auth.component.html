@@ -1,1 +1,32 @@
-<p>auth works!</p>
+<div class="bg-danger p-2 text-center text-white" *ngIf="errorMessage != null">
+  {{ errorMessage }}
+</div>
+
+<div class="p-2">
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="username"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="text-center">
+      <button class="btn btn-secondary" routerLink="/">Turn Back</button>
+      <button class="btn btn-primary ml-2" type="submit">Login</button>
+    </div>
+  </form>
+</div>
