@@ -4,11 +4,12 @@ import { Observable } from 'rxjs';
 import { Category } from './category.model';
 import { Movie } from './movie.model';
 import { Order } from './order.model';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class RestService {
   private baseUrl: string = 'http://localhost:3500';
-
+  token: string;
   constructor(private httpClient: HttpClient) {}
 
   getMovies(): Observable<Movie[]> {
@@ -21,5 +22,20 @@ export class RestService {
 
   saveOrder(order: Order): Observable<Order> {
     return this.httpClient.post<Order>(`${this.baseUrl}/orders`, order);
+  }
+
+  authentication(username: string, password: string): Observable<boolean> {
+    return this.httpClient
+      .post<any>(`${this.baseUrl}/login`, {
+        username: username,
+        password: password,
+      })
+      .pipe(
+        map((response) => {
+          this.token = response.success ? response.token : null;
+          console.log(this.token);
+          return response.success;
+        })
+      );
   }
 }
