@@ -15,4 +15,8 @@ export class MovieListComponent implements OnInit {
   getMovies(): Movie[] {
     return this.movieRepository.getMovies();
   }
+
+  deleteProduct(movie: Movie): void {
+    this.movieRepository.deleteMovie(movie);
+  }
 }

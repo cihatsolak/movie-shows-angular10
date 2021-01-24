@@ -41,4 +41,11 @@ export class MovieRepository implements OnInit {
       });
     }
   }
+
+  deleteMovie(movie: Movie): void {
+    this.restService.deleteMovie(movie).subscribe((response) => {
+      let index = this.movies.findIndex((p) => p.id == movie.id);
+      this.movies.splice(index, 1);
+    });
+  }
 }

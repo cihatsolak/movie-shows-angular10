@@ -44,6 +44,14 @@ export class RestService {
     );
   }
 
+  deleteMovie(movie: Movie): Observable<Movie> {
+    return this.httpClient.delete<Movie>(`${this.baseUrl}/movies/${movie.id}`, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer<${this.token}>`,
+      }),
+    });
+  }
+
   authentication(username: string, password: string): Observable<boolean> {
     return this.httpClient
       .post<any>(`${this.baseUrl}/login`, {
