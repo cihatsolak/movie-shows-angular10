@@ -15,7 +15,7 @@ I wanted to develop a simple project to get to know the angular framework. I use
 
 #### Angular Kısayolar
 
-| First Header   | Second Header     |
+| Kod   | Açıklama     |
 | -------------  | -------------     |
 | node --version | nodeJS versiyon  |
 | npm --version  | npm versiyonu  |
