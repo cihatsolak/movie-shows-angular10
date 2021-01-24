@@ -14,19 +14,20 @@ I wanted to develop a simple project to get to know the angular framework. I use
  * Npm: 6.14.9
 
 #### Angular Kısayolar
-* node --version -> nodeJs versiyon
-* npm --version -> npm versiyon
-* ng --version -> angular 
-* ng new projeAdi -> angular projesi oluşturma
-* ng serve -> projeyi 4200 portında açar
-* ng serve --port 3600 --open -> projeyi 3600 portında açar
-* npm install bootstrap --save yada npm i bootstrap -> bootstrap i projeye dahil etme
-* ng g c movie yada ng generate component movie -> Component Ekleme
-* ng g s movie yada ng generate service movie -> Servis Ekleme
-* ng generate module app-routing --flat --module=app -> Route Modülü Ekleme
-* ng g d directiveName yada ng generate directive directiveName ->
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| First Header   | Second Header     |
+| -------------  | -------------     |
+| node --version | nodeJS versiyon  |
+| npm --version  | npm versiyonu  |
+| ng --version  | angular version  |
+| ng new projeAdi  | angular proje oluşturma  |
+| ng serve    | projeyi 4200 portunda açar  |
+| ng serve --port 3600 --open   | projeyi 3600 portunda açar  |
+| npm install bootstrap --save yada npm i bootstrap  | bootstrap i projeye dahil etme |
+| ng g c movie yada ng generate component movie  | Component Ekleme  |
+| ng g s movie yada ng generate service movie  | Servis Ekleme  |
+| ng generate module app-routing --flat --module=app  | Route Modülü Ekleme  |
+| ng g d directiveName yada ng generate directive directiveName | Directive Ekleme  |
+| ng g c users/user ya da ng g c component/altcomponent  | Component içerisinde  component eklemek  |
+| ng generate module admin --routing  | admin ile beraber routing modulü eklensin  |
+| npm run json | Json server çalıştırma  |
