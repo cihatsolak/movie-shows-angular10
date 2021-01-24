@@ -25,4 +25,20 @@ export class MovieRepository implements OnInit {
 
     return this.movies.filter((item) => item.categoryId == categoryId);
   }
+
+  saveMovie(movie: Movie) {
+    if (movie.id == null || movie.id == 0) {
+      this.restService.addMovie(movie).subscribe((response) => {
+        this.movies.push(movie);
+      });
+    } else {
+      this.restService.updateMovie(movie).subscribe((response) => {
+        this.movies.splice(
+          this.movies.findIndex((p) => p.id == movie.id),
+          1,
+          movie
+        );
+      });
+    }
+  }
 }

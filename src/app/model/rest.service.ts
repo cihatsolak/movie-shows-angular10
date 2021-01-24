@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Category } from './category.model';
@@ -22,6 +22,26 @@ export class RestService {
 
   saveOrder(order: Order): Observable<Order> {
     return this.httpClient.post<Order>(`${this.baseUrl}/orders`, order);
+  }
+
+  addMovie(movie: Movie): Observable<Movie> {
+    return this.httpClient.post<Movie>(`${this.baseUrl}/movies`, movie, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer<${this.token}>`,
+      }),
+    });
+  }
+
+  updateMovie(movie: Movie): Observable<Movie> {
+    return this.httpClient.put<Movie>(
+      `${this.baseUrl}/movies/${movie.id}`,
+      movie,
+      {
+        headers: new HttpHeaders({
+          Authorization: `Bearer<${this.token}>`,
+        }),
+      }
+    );
   }
 
   authentication(username: string, password: string): Observable<boolean> {

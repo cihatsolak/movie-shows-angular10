@@ -1,1 +1,46 @@
-<p>movie-form works!</p>
+<h5>{{ editing ? "Edit" : "Create" }} Movie</h5>
+
+<form #form="ngForm" (ngSubmit)="save(form)">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      name="title"
+      [(ngModel)]="movie.title"
+    />
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input
+      type="text"
+      class="form-control"
+      name="price"
+      [(ngModel)]="movie.price"
+    />
+  </div>
+  <div class="form-group">
+    <label for="imageUrl">Image Url</label>
+    <input
+      type="text"
+      class="form-control"
+      name="imageUrl"
+      [(ngModel)]="movie.imageUrl"
+    />
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      type="text"
+      class="form-control"
+      name="description"
+      [(ngModel)]="movie.description"
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">
+    {{ editing ? "Edit" : "Create" }} Movie
+  </button>
+  <button class="btn btn-warning ml-2" routerLink="/admin/main/movies">
+    Cancel
+  </button>
+</form>

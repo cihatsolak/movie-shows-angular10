@@ -29,8 +29,8 @@ module.exports = function (request, response, next) {
       request.method != "GET"
     ) {
       let token = request.headers["authorization"];
-      if (token != null && token.startsWith("Bearer")) {
-        token = token.substring(7, token.length);
+      if (token != null && token.startsWith("Bearer<")) {
+        token = token.substring(7, token.length - 1);
 
         try {
           jwt.verify(token, app_secret);
