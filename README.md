@@ -1,4 +1,4 @@
-# Movies Shows / Angular 
+# Movie Shows / Angular 
 
 ![index](https://user-images.githubusercontent.com/54249736/105641342-740b4b00-5e94-11eb-9027-2a8f83d4f21a.png)
 
